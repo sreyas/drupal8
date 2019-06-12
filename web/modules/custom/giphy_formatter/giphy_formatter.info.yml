@@ -1,0 +1,7 @@
+name: Gipfy Formatter
+type: module
+description: 'Giphy search result embed formatter for the link field.'
+package: 'custom'
+core: 8.x
+dependencies:
+  - field

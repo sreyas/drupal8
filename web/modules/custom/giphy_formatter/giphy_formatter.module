@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_entity_presave().
+ */
+ 
+function giphy_formatter_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->getEntityType()->id() == 'node') {
+    $plaintext = $entity->field_plain_text->value;
+    $url = "http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=jkJ6uj6xibCWjJtr6M5utUpnWrv64PrM&limit=1";
+    $details=file_get_contents($url);
+    $result = json_decode($details,true);
+ }
+}
+?>
